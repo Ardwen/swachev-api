@@ -44,11 +44,8 @@ public class UserController {
     @GetMapping("/user/me")
     @PreAuthorize("hasRole('USER')")
     public UserSummary getCurrentUser(@CurrentUser UserPrincipal currentUser) {
-        UserSummary userSummary = new UserSummary(
-        		currentUser.getId(),
-        		currentUser.getUsername(),
-        		currentUser.getName(), 
-        		currentUser.getAuthorities());
+        //UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName());
+    	UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName(), currentUser.getAuthorities());
         return userSummary;
     }
 
@@ -108,10 +105,10 @@ public class UserController {
 
         try {
             Vehicle vehicle = pollService.getVehicle(vehicle_id);
-            response.setUser_id(vehicle.getId());
+            response.setId(vehicle.getId());
             response.setMake(vehicle.getMake());
             response.setModel(vehicle.getModel());
-            response.setModel_type(vehicle.getVehicle_type());
+            response.setVehicleType(vehicle.getVehicleType());
             response.setId(vehicle_id);
         }catch(Exception e){
             response.setSuccess(false);
@@ -119,7 +116,8 @@ public class UserController {
         return response;
 
     }
-
+    
+/*    
     @PostMapping("/vehicles/{user_id}")
     public UserVehicleResponse getVehicles(@PathVariable(value = "user_id") Long user_id) {
         UserVehicleResponse response = new UserVehicleResponse();
@@ -129,7 +127,7 @@ public class UserController {
             List<VehicleRequest> vehiclesRequests =new ArrayList<>();
             for(Vehicle vehicle:vehicles){
                 VehicleRequest res = new VehicleRequest();
-                res.setUser_id(vehicle.getId());
+                res.setId(vehicle.getId());
                 res.setMake(vehicle.getMake());
                 res.setModel(vehicle.getModel());
                 res.setModel_type(vehicle.getVehicle_type());
@@ -143,5 +141,5 @@ public class UserController {
 
         return response;
     }
-
+*/
 }

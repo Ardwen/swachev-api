@@ -1,0 +1,49 @@
+### Server Properties
+#server.port= 8080
+server.port= 5000
+#server.compression.enabled=true
+
+## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.url= jdbc:mysql://localhost:3306/ebdb?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false 
+spring.datasource.username= root
+spring.datasource.password= root
+
+## Hibernate Properties
+# The SQL dialect makes Hibernate generate better SQL for the chosen database
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.database-platform=org.hibernate.dialect.MySQL55Dialect
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.show-sql=true
+
+## Hibernate Logging
+logging.level.org.hibernate.SQL= DEBUG
+
+# Initialize the datasource with available DDL and DML scripts
+spring.datasource.initialization-mode=always
+
+## Jackson Properties
+spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS= false
+spring.jackson.time-zone= UTC
+
+## App Properties
+app.jwtSecret= JWTSuperSecretKey
+app.jwtExpirationInMs = 604800000
+
+## MULTIPART (MultipartProperties)
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.file-size-threshold=20KB
+spring.servlet.multipart.max-file-size=20000kb
+spring.servlet.multipart.max-request-size=2015MB
+
+
+file.upload-dir=/ev/media/upload
+
+
+## Spring Profiles
+# spring.profiles.active=prod
+
+marqeta.card.product.token=${MARQETA_CARD_PRODUCT_TOKEN}
+marqeta.url=https://sandbox-api.marqeta.com/v3
+marqeta.application.token=${MARQETA_APPLICATION_TOKEN}
+marqeta.master.access.token=${MARQETA_MATSER_ACCESS_TOKEN}

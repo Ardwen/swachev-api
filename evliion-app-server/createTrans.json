@@ -1,0 +1,12 @@
+{
+"userId": 123,
+"stationId": 456,
+"vehicleId": 789, 
+"slotDuration":
+{
+"startTime": "9.30am",
+"endTime":"10.30am",
+"totalTime":"60mins"
+},
+"pricePlanId": 123456
+}

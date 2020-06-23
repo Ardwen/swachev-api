@@ -1,59 +1,54 @@
 package com.evliion.ev.payload;
 import org.springframework.lang.Nullable;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
+/*
+ * ToDo - Look if @NotNull or @NotBlank is valid
+ */
 public class VehicleRequest {
-    @Nullable
-    private Long id;
-    @NotNull
-    private Long user_id;
-    @NotNull
-    private String make;
+	
+    //@NotBlank
+	private int batteryCapacity;
 
-    public Long getId() {
-        return id;
-    }
+	@NotBlank
+	private String make;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	@NotBlank
+	private String model;
 
-    @NotNull
-    private String model;
-    @NotNull
-    private String model_type;
+	@NotBlank
+	private String vehicleType;
 
-    public Long getUser_id() {
-        return user_id;
-    }
+	public String getMake() {
+		return make;
+	}
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
-    }
+	public void setMake(String make) {
+		this.make = make;
+	}
 
-    public String getMake() {
-        return make;
-    }
+	public String getModel() {
+		return model;
+	}
 
-    public void setMake(String make) {
-        this.make = make;
-    }
+	public void setModel(String model) {
+		this.model = model;
+	}
 
-    public String getModel() {
-        return model;
-    }
+	public String getVehicleType() {
+		return vehicleType;
+	}
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+	public void setVehicleType(String vehicleType) {
+		this.vehicleType = vehicleType;
+	}
 
-    public String getModel_type() {
-        return model_type;
-    }
+	public int getBatteryCapacity() {
+		return batteryCapacity;
+	}
 
-    public void setModel_type(String model_type) {
-        this.model_type = model_type;
-    }
+	public void setBatteryCapacity(int batteryCapacity) {
+		this.batteryCapacity = batteryCapacity;
+	}
 }
-

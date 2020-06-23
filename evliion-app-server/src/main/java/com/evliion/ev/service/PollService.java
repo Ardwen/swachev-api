@@ -125,7 +125,7 @@ public class PollService {
         // Retrieve all poll details from the voted pollIds.
         List<Long> pollIds = userVotedPollIds.getContent();
 
-        Sort sort = new Sort(Sort.Direction.DESC, "createdAt");
+        Sort sort = Sort.by(Sort.Direction.DESC, "createdAt");
         List<Poll> polls = pollRepository.findByIdIn(pollIds, sort);
 
         // Map Polls to PollResponses containing vote counts and poll creator details
@@ -279,8 +279,8 @@ public class PollService {
             Vehicle vehicle = new Vehicle();
             vehicle.setMake(vehicleRequest.getMake());
             vehicle.setModel(vehicleRequest.getModel());
-            vehicle.setVehicle_type(vehicleRequest.getModel_type());
-            vehicle.setUserId(vehicleRequest.getUser_id());
+            vehicle.setVehicleType(vehicleRequest.getVehicleType());
+            //vehicle.setUserId(vehicleRequest.getUserID());
             vehicleRepository.save(vehicle);
         }catch(Exception e){
             logger.error("Error in saving vehicle", e);

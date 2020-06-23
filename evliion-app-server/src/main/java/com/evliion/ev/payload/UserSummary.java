@@ -1,7 +1,7 @@
 package com.evliion.ev.payload;
 
 import java.util.Collection;
-
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 
@@ -18,13 +18,13 @@ public class UserSummary {
         
     }
     public UserSummary(Long id, String username, String name, Collection<? extends GrantedAuthority> authorities) {
-        this.id = id;
-        this.username = username;
-        this.name = name;
-        this.authorities = authorities;
-        
-    }
-    
+		super();
+		this.id = id;
+		this.username = username;
+		this.name = name;
+		this.authorities = authorities;
+	}
+
 	public Long getId() {
         return id;
     }

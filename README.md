@@ -1,5 +1,13 @@
-# swachev-api
+## Full Stack SwachEV app to find near by Local businesses
 Swachev REST API
+
+## Built with 
+
+1. **Spring Boot**
+2. **Spring Security**
+3. **JWT**
+4. **React and**
+5. **Ant Design**
 
 ## Steps to Setup the Spring Boot Back end app (evliion-app-server)
 
@@ -13,7 +21,7 @@ Swachev REST API
 2. **Create MySQL database**
 
 	```bash
-	create database evliion_app
+	create database ebdb
 	```
 
 3. **Change MySQL username and password as per your MySQL installation**
@@ -30,7 +38,7 @@ Swachev REST API
 	mvn spring-boot:run
 	```
 
-	The server will start on port 8080.
+	The server will start on port 5000.
 
 	You can also package the application in the form of a `jar` file and then run it like so -
 
@@ -55,7 +63,6 @@ Clone the application
 
 ```bash
 git clone git@github.com:swachev/marketplace.git
-cd evliion-app-server
 ```
 
 First go to the `evliion-app-client` folder -

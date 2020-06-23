@@ -1,3 +1,4 @@
+
 package com.evliion.ev.repository;
 
 import com.evliion.ev.model.Role;
@@ -7,10 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-/**
- * 
- */
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
-    Optional<Role> findByName(RoleName roleName);
+	Optional<Role> findByName(RoleName roleName);
 }
