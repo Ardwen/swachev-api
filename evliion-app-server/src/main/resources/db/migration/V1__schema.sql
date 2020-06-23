@@ -89,3 +89,28 @@ CREATE TABLE `documents` (
 	`upload_dir` varchar(140) NOT NULL ,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE order_ (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  address varchar(255) DEFAULT NULL,
+  receiver varchar(255) DEFAULT NULL,
+  mobile varchar(255) DEFAULT NULL,
+  userMessage varchar(255) DEFAULT NULL,
+  uid int(11) DEFAULT NULL,
+  status varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id),
+  CONSTRAINT fk_order_user FOREIGN KEY (uid) REFERENCES users (id)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+CREATE TABLE orderitem (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  pid int(11) DEFAULT NULL,
+  oid int(11) DEFAULT NULL,
+  uid int(11) DEFAULT NULL,
+  number int(11) DEFAULT NULL,
+  PRIMARY KEY (id),
+  CONSTRAINT fk_orderitem_user FOREIGN KEY (uid) REFERENCES users (id),
+  CONSTRAINT fk_orderitem_product FOREIGN KEY (pid) REFERENCES product (id),
+  CONSTRAINT fk_orderitem_order FOREIGN KEY (oid) REFERENCES order_ (id)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
