@@ -15,7 +15,11 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+<<<<<<< HEAD
+		<version>2.0.1.RELEASE</version>
+=======
 		<version>2.2.1.RELEASE</version>
+>>>>>>> 1e315e355fcb88902eb63d1973aa365825f3312e
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -61,6 +65,12 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
 		</dependency>
 
 		<dependency>
